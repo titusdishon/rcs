@@ -1,0 +1,38 @@
+{% extends 'app/base_site.html' %}
+{% load crispy_forms_tags %}
+{% load rest_framework %}
+{% block content %}
+    <div class="right_col" role="main">
+        <form method="POST">
+            <div class="form-group">
+                <legend class="border-bottom mb-4">Configure A Revenue Sources</legend>
+                {% csrf_token %}
+                {{ form|crispy }}
+
+
+            </div>
+            <button class="btn btn-primary" style="margin-bottom: 20px" type="submit">Save</button>
+        </form>
+        <h4>All Revenue Sources</h4>
+        <div class="row">
+            {% for r_source  in all_r_sources %}
+                <div class="col-sm-2" id="card">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ r_source.name }}</h5>
+                            <p class="card-text">Created By: {{ r_source.created_by }}</p>
+                            {% if r_source.pos_enabled == 0 %}
+                                <p class="card-text">POS Enabled</p>
+                            {% elif r_source.pos_enabled == 1 %}
+                                <p class="card-text">POS Not Enabled</p>
+                            {% endif %}
+                            <p class="card-text">General Ledger{{ r_source.general_ledger }}</p>
+                            <a href="#" class="btn btn-primary">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

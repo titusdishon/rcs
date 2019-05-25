@@ -1,0 +1,24 @@
+{% extends 'app/base_site.html' %}
+{% load crispy_forms_tags %}
+{% load rest_framework %}
+{% block content %}
+    <div class="right_col" role="main">
+        <div class="content-section ">
+            <div class="col-sm-12 m-auto">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Register User</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,35 @@
+{% extends 'app/base_site.html' %}
+{% load crispy_forms_tags %}
+{% load rest_framework %}
+{% block content %}
+    <div class="right_col" role="main">
+        <form method="POST">
+            <div class="form-group">
+                <legend class="border-bottom mb-4">Configure A Zone</legend>
+                {% csrf_token %}
+                {{ form|crispy }}
+
+
+            </div>
+            <button class="btn btn-primary" style="margin-bottom: 20px" type="submit">Save</button>
+        </form>
+        <h4>All Zones</h4>
+        <div class="row">
+            {% for country in all_countries %}
+                <div class="col-sm-2" id="card">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ country.name }}</h5>
+                            <p class="card-text">Created By: {{ country.created_by }}</p>
+                            <p class="card-text">Country Code: {{ country.code }}</p>
+                            <a href="#" class="btn btn-primary">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}
+

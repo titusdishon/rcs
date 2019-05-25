@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section ">
+        <div class="row ">
+            <a class="mr-auto ml-5 mt-15">+0000000000000</a>
+            <a class="ml-auto mr-5 mt-15">westp@gmail.com</a>
+        </div>
+        <hr>
+        <div class="row ">
+            <div class="col-sm-3">
+
+            </div>
+            <div class="col-sm-6 ">
+                <br><br>
+                <div class="img-section" style="width: 100%; text-align: center">
+
+                    <img class="img-rounded " style="width: 150px; height: 150px;"
+                         src="/static/images/wp-logo.png">
+
+                </div>
+                <h3 style="width:100% ; text-align: center">West Pokot County Government</h3>
+                <hr>
+                <h6 style="width:100% ; text-align: center">Revenue Collection System</h6>
+                <hr>
+                <form method="POST" class="form" style="width: 80%; margin-left: 10%">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Log In</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Login</button>
+                        <small class="text-muted"><a class="ml-2" href="{% url 'rcs-users:password_reset' %}">Forgot
+                            Password?</a></small>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row  text-center">
+            <p style="width: 100%" class="text-center">Copyright ©2017 shoply. Designed by <a href="" target="_blank">shoply</a></p>
+        </div>
+    </div>
+{% endblock content %}
+
+

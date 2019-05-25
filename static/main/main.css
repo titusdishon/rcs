@@ -1,0 +1,56 @@
+.asteriskField {
+    display: none;
+}
+
+#hint_id_password1 {
+    display: none;
+}
+
+#hint_id_username {
+    display: none;
+}
+
+#hint_id_password2 {
+    display: none;
+}
+
+.cart {
+    background-color: #ff7714;
+}
+
+.cart p {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.div_id_image a {
+    display: none;
+}
+.card {
+    padding: 5px;
+}
+
+.div_id_image div a{
+    display: none;
+}
+.alert li{
+    list-style: none;
+    color: #ff1a24;
+}
+.form{
+    text-align: center;
+}
+.controls ul li{
+    list-style: none;
+}
+.controls a{
+    display: none;
+}
+.media{
+    border: solid 2px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 10px;
+}
+.border-top{
+    text-align: center;
+}

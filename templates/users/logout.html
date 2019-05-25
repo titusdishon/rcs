@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section ">
+    <div class="row ">
+        <a class="mr-auto ml-5 mt-15">+0000000000000</a>
+        <a class="ml-auto mr-5 mt-15">westp@gmail.com</a>
+    </div>
+    <hr>
+    <div class="row ">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-6 ">
+            <div class="jumbotron"><h2 class="text-center"> You Have Been Logged Out</h2></div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    <a href="{% url 'rcs-users:login' %}">Login Again</a>
+                </small>
+            </div>
+        </div>
+    </div>
+        <hr>
+        <div class="row  text-center fixed-bottom">
+            <p style="width: 100%" class="text-center">Copyright ©2019 west pokot county. Designed by <a href="" target="_blank">gravitech</a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}
+
+
